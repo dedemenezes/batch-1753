@@ -1,10 +1,12 @@
 require 'open-uri'
 require 'nokogiri'
 
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
+
 def fetch_movies_url
   # 1. Make an HTTP request!
   url = 'https://www.imdb.com/chart/top/'
-  html_file = URI.open(url, "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36").read
+  html_file = URI.open(url, 'User-Agent' => USER_AGENT).read
   # 2. Parsing the HTML
   html_doc = Nokogiri::HTML.parse(html_file)
   # 3. Search for whatever you want!
@@ -22,11 +24,10 @@ def fetch_movies_url
   # p new_array
 end
 
-
 def scrape_movie(url)
   movie_hash = {}
   # 1. Make an HTTP request!
-  html_file = URI.open(url, "Accept-Language" => "en-US", "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36").read
+  html_file = URI.open(url, { "Accept-Language" => "en-US", "User-Agent" => USER_AGENT }).read
   # 2. Parsing the HTML
   html_doc = Nokogiri::HTML.parse(html_file)
   # 3. Search for whatever you want!

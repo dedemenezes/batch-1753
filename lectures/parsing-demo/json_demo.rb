@@ -1,8 +1,9 @@
-require "json"
+# frozen_string_literal: true
 
-# TODO - let's read/write data from beatles.json
-filepath = "data/beatles.json"
+require 'json'
 
+# TODO: - let's read/write data from beatles.json
+filepath = 'data/beatles.json'
 
 # PARSING!
 
@@ -20,21 +21,20 @@ p second_beatle
 first_name = second_beatle['first_name']
 p first_name
 
-
 # STORING
 beatles = { beatles: [
   {
-    first_name: "John",
-    last_name: "Lennon",
-    instrument: "Guitar"
+    first_name: 'John',
+    last_name: 'Lennon',
+    instrument: 'Guitar'
   },
   {
-    first_name: "Paul",
-    last_name: "McCartney",
-    instrument: "Bass Guitar"
-  },
+    first_name: 'Paul',
+    last_name: 'McCartney',
+    instrument: 'Bass Guitar'
+  }
   # etc...
-]}
+] }
 
 File.open(filepath, 'wb') do |file|
   file.write(JSON.generate(beatles))

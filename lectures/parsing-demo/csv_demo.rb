@@ -1,6 +1,8 @@
-require "csv" # load the CSV class into my file!
+# frozen_string_literal: true
 
-# TODO - let's read/write data from beatles.csv
+require 'csv' # load the CSV class into my file!
+
+# TODO: - let's read/write data from beatles.csv
 
 # PARSING
 # filepath = 'data/beatles.csv'
@@ -11,8 +13,6 @@ require "csv" # load the CSV class into my file!
 #   # p "first name is: #{row['First Name']} | last name is: #{row['Last Name']} | instrument is: #{row['Instrument']}"
 #   # first name is: John
 # end
-
-
 
 # STORING
 

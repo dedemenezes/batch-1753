@@ -5,19 +5,19 @@ def parse_url(url)
   paths.delete('')
 
   # p match_data[:params]
-  # if match_data[:params].empty?
-  #   params_hash = {}
-  # else
-  #   query_params = match_data[:params].split('=') #=> "search=currywurst" || ["search", "currywurst"]
-  #   params_hash = { query_params[0].to_sym => query_params[1] }
-  # end
-
-  unless match_data[:params].empty?
+  if match_data[:params].empty?
+    params_hash = {}
+  else
     query_params = match_data[:params].split('=') #=> "search=currywurst" || ["search", "currywurst"]
     params_hash = { query_params[0].to_sym => query_params[1] }
-  else
-    params_hash = {}
   end
+
+  # unless match_data[:params].empty?
+  #   query_params = match_data[:params].split('=') #=> "search=currywurst" || ["search", "currywurst"]
+  #   params_hash = { query_params[0].to_sym => query_params[1] }
+  # else
+  #   params_hash = {}
+  # end
 
   {
     scheme: match_data[:scheme],

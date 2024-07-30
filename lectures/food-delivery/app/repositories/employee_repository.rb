@@ -1,4 +1,5 @@
 require 'csv'
+require_relative '../models/employee'
 
 class EmployeeRepository
   def initialize(csv_file_path)
@@ -6,6 +7,16 @@ class EmployeeRepository
     @employees = []
     # we should load all employees from the CSV
     load_csv
+  end
+
+  # Going through the employees repo and find an employee with an specific username
+  def find_by_username(username)
+    # 1. iterate over the employees array
+    # 2. find the one that matches the username the user gave us
+    @employees.find do |employee|
+      # compare the actual employee username with the one the user gave us
+      employee.username == username
+    end
   end
 
   private

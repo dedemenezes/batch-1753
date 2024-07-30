@@ -16,17 +16,13 @@ class Router
       # WHILE THE USER IS LOGGED IN!
       while @current_employee #=> is not nil!
         if @current_employee.role == 'manager'
-          # puts 'Logged in as MANAGER!'
           display_manager_options
           action = gets.chomp.to_i
           dispatch_manager(action)
         else
-          # puts 'Logged in as RIDER!'
           display_rider_options
-          # get the rider action
           action = gets.chomp.to_i
           dispatch_rider(action)
-          # if its not a manager
         end
       end
     end

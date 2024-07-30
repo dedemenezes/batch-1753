@@ -1,3 +1,4 @@
 id,username,password,role
 1,hermione,secret,manager
 2,draco,secret,rider
+3,crabe,secret,rider

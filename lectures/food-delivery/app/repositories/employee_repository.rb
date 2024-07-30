@@ -6,7 +6,11 @@ class EmployeeRepository
     @csv_file = csv_file_path
     @employees = []
     # we should load all employees from the CSV
-    load_csv
+    load_csv if File.exist?(@csv_file)
+  end
+
+  def all_riders
+    @employees.select { |employee| employee.rider? }
   end
 
   # Going through the employees repo and find an employee with an specific username
@@ -16,6 +20,12 @@ class EmployeeRepository
     @employees.find do |employee|
       # compare the actual employee username with the one the user gave us
       employee.username == username
+    end
+  end
+
+  def find(id)
+    @employees.find do |employee|
+      employee.id == id
     end
   end
 

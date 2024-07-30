@@ -1,8 +1,9 @@
 class Router
-  def initialize(meals_controller, customers_controller, sessions_controller)
+  def initialize(meals_controller, customers_controller, sessions_controller, orders_controller)
     @sessions_controller = sessions_controller
     @meals_controller = meals_controller
     @customers_controller = customers_controller
+    @orders_controller = orders_controller
     @running = true
   end
 
@@ -15,7 +16,7 @@ class Router
       @current_employee = @sessions_controller.login
       # WHILE THE USER IS LOGGED IN!
       while @current_employee #=> is not nil!
-        if @current_employee.role == 'manager'
+        if @current_employee.manager?
           display_manager_options
           action = gets.chomp.to_i
           dispatch_manager(action)
@@ -45,8 +46,8 @@ class Router
   def dispatch_rider(action)
     print `clear`
     case action
-    when 1 then puts "TODO: list all my undelivered orders (controller)"
-    when 2 then puts "TODO: mark one of my orders as delivered (controller)"
+    when 1 then @orders_controller.list_my_orders(@current_employee)
+    when 2 then @orders_controller.mark_as_delivered(@current_employee)
     when 9
       # we need to logout
       # loguout mean MAKE THE CURRENT EMPLOYEE VARIABLE nil
@@ -67,6 +68,9 @@ class Router
     puts '6 - Add a customer'
     puts '7 - Edit a customer'
     puts '8 - Delete a customer'
+    # puts '9. Logout'
+    puts '10 - Add a order'
+    puts '11 - List undelivered orders'
     puts '0 - Exit'
     print '> '
   end
@@ -82,6 +86,8 @@ class Router
     when 6 then @customers_controller.add
     when 7 then @customers_controller.edit
     when 8 then @customers_controller.remove
+    when 10 then @orders_controller.add
+    when 11 then @orders_controller.list_undelivered_orders
     when 0 then stop!
     else
       puts 'Invalid option!'

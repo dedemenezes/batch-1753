@@ -6,7 +6,7 @@
 @import url("components/navbar.css");
 
 /* --- Layouts --- */
-/*@import url("pages/campuses.css");*/
+@import url("pages/campuses.css");
 
 
 /* --- Fonts & colors --- */
@@ -19,4 +19,17 @@ h1, h2, h3 {
 }
 .text-center {
   text-align: center;
+}
+
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }

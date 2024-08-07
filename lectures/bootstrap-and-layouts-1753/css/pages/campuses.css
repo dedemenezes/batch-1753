@@ -1,1 +1,12 @@
 /* TODO: Build layout for campuses page */
+.map-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 16px;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+}

@@ -1,0 +1,7 @@
+#navbar {
+  height: 54px;
+}
+
+#sidebar {
+  height: calc(100vh - 54px);
+}

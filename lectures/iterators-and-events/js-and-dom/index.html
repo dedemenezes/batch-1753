@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>JavaScript DOM demo</title>
+
+    <link rel="icon" type="image/png" href="images/logo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar-lewagon" id="navbar">
+      <img src="images/logo.png" alt="logo">
+    </div>
+
+    <div class="container">
+
+      <h1>Choose a pet:</h1>
+      <input id="select-all-checkbox" name="select-all" type="checkbox">
+      <label for="select-all-checkbox">Select all</label>
+      <form>
+        <div class="form-group">
+          <input type="checkbox" id="cat" class="form-check-input" name="cat" value="Cat">
+          <label for="cat" class="form-check-label"> I have a cat</label><br>
+          <input type="checkbox" id="dog" class="form-check-input" name="dog" value="Dog">
+          <label for="dog" class="form-check-label"> I have a dog</label><br>
+          <input type="checkbox" id="rabbit" class="form-check-input" name="rabbit" value="Rabbit">
+          <label for="rabbit" class="form-check-label"> I have a rabbit</label><br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+      <img class='student' src="https://kitt.lewagon.com/placeholder/users/guilherme-rizzo"
+      id="guilherme" height="200" alt="Guilherme Rizzo" />
+      <img class='student' src="https://kitt.lewagon.com/placeholder/users/jfmattos"
+     id="jasmim" height="200" alt="Jasmim Mattos" />
+      <!-- Your code here -->
+
+      <a id="link" href="http://google.com">Click me!</a>
+
+      <p id="agnetha" class="abba" data-band="abba" data-instrument="vocals">Dataset DEMO (open the console)</p>
+
+      <ul>
+        <li class="abba" data-instrument="vocals">Agnetha</li>
+        <li class="abba" data-instrument="guitars">Bjorn</li>
+        <li class="abba" data-instrument="keyboards">Benny</li>
+        <li class="abba" data-instrument="vocals">Anni-Frid</li>
+      </ul>
+
+    </div>
+
+    <!-- Bootstrap JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Your own JavaScript file -->
+    <script src="javascript/application.js"></script>
+  </body>
+</html>
